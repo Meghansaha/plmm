@@ -1,0 +1,30 @@
+/*-- scss:defaults --*/
+
+html {
+    height: 100%;
+}
+
+body {
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center bottom;
+    background-image: url("images/back.png"),  linear-gradient(180deg, #FAECD1, #FCDBB7);
+    background-size: 100%;
+
+}
+
+img {
+  border: 5px double #000000;
+  border-radius: 25px 8px 22px 15px/15px 95px 15px 85px;
+}
+
+strong:nth-child(n) {
+  font-weight: bold;
+}
+
+figcaption {
+  font-weight: bold;
+  font-style: italic;
+  text-align: center;
+}

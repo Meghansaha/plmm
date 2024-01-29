@@ -1,0 +1,35 @@
+---
+format: html
+theme:
+  - lux
+  - style.css
+linkcolor: "#045D59"
+toc-location: left
+toc: true
+toc-title: "Contents"
+fontcolor: "#000000"
+---
+
+![](images/banner.png){fig-alt="Please Let Me Merge Before I Start Crying: And Other Things I've Said At The Git Terminal" fig-align="center" width="100%"}
+
+# About
+
+It's probably a safe bet to say that most of the Posit Community have at least heard of the version control system, "[git](https://en.wikipedia.org/wiki/Git)," or the developer platform "[GitHub](https://en.wikipedia.org/wiki/GitHub)." A smaller number of people can probably say they actually use git, but an even smaller number would possibly say they feel comfortable collaborating with git. This may be due to unique circumstances, like being a lone data science unicorn, having antiquated data workflows, or because users can't expand upon their git knowledge to introduce collaborative functionality to their workflows.
+
+!["Git" seems to be the version control software of choice within the Posit Community.](images/git_logo.png){fig-alt="The Git Logo" fig-align="center"}
+
+Whatever the reason, it is hard to deny how imperative version control is to collaborative data science work, and while git is not the only version control system that exists, its use in the Posit Community is undeniably strong, possibly due in part to RStudio's integration of the software along with the development of the [`usethis` package](https://usethis.r-lib.org/reference/index.html#git-and-github) as well.
+
+***"Please Let Me Merge"*** is geared towards those who may feel comfortable working independently with git but need some confidence when working collaboratively. Just like novice drivers can learn to confidently (and **safely!**) merge onto <small>(*seemingly*)</small> intimidating highways, those new to collaborating with git can also conquer git merges with some exposure and preparation.
+
+![When drivers finally learn what the 'acceleration lane' of a highway is.](images/initiald.gif){fig-alt="A gif from the anime Initial D with cars racing" fig-align="center"}
+
+# Interacting With Git
+
+# What is `git merge` And Why Are People Afraid of It?
+
+# What is A `git merge` Conflict?
+
+# `git merge` Conflicts in the Wild
+
+# Preparing For Better Merges
