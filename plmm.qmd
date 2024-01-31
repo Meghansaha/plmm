@@ -30,15 +30,25 @@ For those of us that use git, we have a few options when it comes to interacting
 
 ## RStudio Graphical User Interface (GUI)
 
+For R users, this may be the most popular method of interacting with git. Undoubtedly due to RStudio's ability to shield users from the traditional terminal view. Users that interact with git in this way only need to save their work, commit their changes, and push up to their repository that's probably on GitHub.
+
 ![](images/rstudio_gui.png){fig-alt="A screenshot of RStudio's Graphical User Interface that allows users to interact with the git version control system" fig-align="center" width="100%"}
 
 ## Command Line Terminals
+
+For the hardcore git veterans (or for those that just want a 'fluff-free' git experience), the command line may be their tool of choice. RStudio users have the option of interacting with their system's terminal within RStudio; but [git bash](https://www.atlassian.com/git/tutorials/git-bash) and standard terminal shell programs like [PowerShell](https://en.wikipedia.org/wiki/PowerShell) for Windows and [Terminal](https://en.wikipedia.org/wiki/Terminal_(macOS)) for macOs can also be used outside of RStudio.
 
 ![](images/git_bash.png){fig-alt="A screenshot of the Git Bash application. An example of a Command Line Terminal." fig-align="center"}
 
 ## Git GUI Clients
 
+For the "fluffiest" git experience, users can use [third-party Git GUI clients](https://git-scm.com/downloads/guis) like [GitHub Desktop](https://desktop.github.com/) or [GitKraken](https://www.gitkraken.com/). Git GUI clients can be free or proprietary and usually have some added benefits like improved error messaging, accessibility to most git commands and functionality, and in some cases added visualizations to assist with general version control and commit histories.
+
 ![](images/gh_desktop.png){fig-alt="A screenshot of the Git Client program GitHub Desktop" fig-align="center" width="100%"}
+
+## Which Method Should I Use?
+
+Whatever you feel most comfortable with. Unless the organization you are collaborating with explicitly states you must use one method over the other, any method of git interaction will provide the same results. The only time this may not be true is if your work requires ***very advanced*** git operations. Most work does not fall into this category. Remember, **you don't get brownie points** for using a terminal, and **your Data Science 'card' won't be revoked** if you prefer a third-party GUI client. Use whatever takes less time and causes less pain based on your experience and skill set.
 
 # What is `git merge` And Why Are People Afraid of It?
 
