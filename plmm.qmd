@@ -26,6 +26,20 @@ Whatever the reason, it is hard to deny how imperative version control is to col
 
 # Interacting With Git
 
+For those of us that use git, we have a few options when it comes to interacting with git and github:
+
+## RStudio Graphical User Interface (GUI)
+
+![](images/rstudio_gui.png){fig-alt="A screenshot of RStudio's Graphical User Interface that allows users to interact with the git version control system" fig-align="center" width="100%"}
+
+## Command Line Terminals
+
+![](images/git_bash.png){fig-alt="A screenshot of the Git Bash application. An example of a Command Line Terminal." fig-align="center"}
+
+## Git GUI Clients
+
+![](images/gh_desktop.png){fig-alt="A screenshot of the Git Client program GitHub Desktop" fig-align="center" width="100%"}
+
 # What is `git merge` And Why Are People Afraid of It?
 
 # What is A `git merge` Conflict?

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.528">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -46,7 +46,12 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a></li>
-  <li><a href="#interacting-with-git" id="toc-interacting-with-git" class="nav-link" data-scroll-target="#interacting-with-git">Interacting With Git</a></li>
+  <li><a href="#interacting-with-git" id="toc-interacting-with-git" class="nav-link" data-scroll-target="#interacting-with-git">Interacting With Git</a>
+  <ul class="collapse">
+  <li><a href="#rstudio-graphical-user-interface-gui" id="toc-rstudio-graphical-user-interface-gui" class="nav-link" data-scroll-target="#rstudio-graphical-user-interface-gui">RStudio Graphical User Interface (GUI)</a></li>
+  <li><a href="#command-line-terminals" id="toc-command-line-terminals" class="nav-link" data-scroll-target="#command-line-terminals">Command Line Terminals</a></li>
+  <li><a href="#git-gui-clients" id="toc-git-gui-clients" class="nav-link" data-scroll-target="#git-gui-clients">Git GUI Clients</a></li>
+  </ul></li>
   <li><a href="#what-is-git-merge-and-why-are-people-afraid-of-it" id="toc-what-is-git-merge-and-why-are-people-afraid-of-it" class="nav-link" data-scroll-target="#what-is-git-merge-and-why-are-people-afraid-of-it">What is <code>git merge</code> And Why Are People Afraid of It?</a></li>
   <li><a href="#what-is-a-git-merge-conflict" id="toc-what-is-a-git-merge-conflict" class="nav-link" data-scroll-target="#what-is-a-git-merge-conflict">What is A <code>git merge</code> Conflict?</a></li>
   <li><a href="#git-merge-conflicts-in-the-wild" id="toc-git-merge-conflicts-in-the-wild" class="nav-link" data-scroll-target="#git-merge-conflicts-in-the-wild"><code>git merge</code> Conflicts in the Wild</a></li>
@@ -69,7 +74,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="about" class="level1">
 <h1>About</h1>
 <p>It’s probably a safe bet to say that most of the Posit Community have at least heard of the version control system, “<a href="https://en.wikipedia.org/wiki/Git">git</a>,” or the developer platform “<a href="https://en.wikipedia.org/wiki/GitHub">GitHub</a>.” A smaller number of people can probably say they actually use git, but an even smaller number would possibly say they feel comfortable collaborating with git. This may be due to unique circumstances, like being a lone data science unicorn, having antiquated data workflows, or because users can’t expand upon their git knowledge to introduce collaborative functionality to their workflows.</p>
-<div class="img-fluid quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/git_logo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The Git Logo"></p>
 <figcaption>“Git” seems to be the version control software of choice within the Posit Community.</figcaption>
@@ -77,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <p>Whatever the reason, it is hard to deny how imperative version control is to collaborative data science work, and while git is not the only version control system that exists, its use in the Posit Community is undeniably strong, possibly due in part to RStudio’s integration of the software along with the development of the <a href="https://usethis.r-lib.org/reference/index.html#git-and-github"><code>usethis</code> package</a> as well.</p>
 <p><strong><em>“Please Let Me Merge”</em></strong> is geared towards those who may feel comfortable working independently with git but need some confidence when working collaboratively. Just like novice drivers can learn to confidently (and <strong>safely!</strong>) merge onto <small>(<em>seemingly</em>)</small> intimidating highways, those new to collaborating with git can also conquer git merges with some exposure and preparation.</p>
-<div class="img-fluid quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/initiald.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A gif from the anime Initial D with cars racing"></p>
 <figcaption>When drivers finally learn what the ‘acceleration lane’ of a highway is.</figcaption>
@@ -86,6 +91,31 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="interacting-with-git" class="level1">
 <h1>Interacting With Git</h1>
+<p>For those of us that use git, we have a few options when it comes to interacting with git and github:</p>
+<section id="rstudio-graphical-user-interface-gui" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio-graphical-user-interface-gui">RStudio Graphical User Interface (GUI)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rstudio_gui.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A screenshot of RStudio's Graphical User Interface that allows users to interact with the git version control system"></p>
+</figure>
+</div>
+</section>
+<section id="command-line-terminals" class="level2">
+<h2 class="anchored" data-anchor-id="command-line-terminals">Command Line Terminals</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/git_bash.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A screenshot of the Git Bash application. An example of a Command Line Terminal."></p>
+</figure>
+</div>
+</section>
+<section id="git-gui-clients" class="level2">
+<h2 class="anchored" data-anchor-id="git-gui-clients">Git GUI Clients</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gh_desktop.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A screenshot of the Git Client program GitHub Desktop"></p>
+</figure>
+</div>
+</section>
 </section>
 <section id="what-is-git-merge-and-why-are-people-afraid-of-it" class="level1">
 <h1>What is <code>git merge</code> And Why Are People Afraid of It?</h1>
@@ -263,7 +293,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      return note.innerHTML;
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
     }
   }
   for (var i=0; i<xrefs.length; i++) {
