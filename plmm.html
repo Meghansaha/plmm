@@ -122,14 +122,35 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="which-method-should-i-use" class="level2">
 <h2 class="anchored" data-anchor-id="which-method-should-i-use">Which Method Should I Use?</h2>
-<p>Whatever you feel most comfortable with. Unless the organization you are collaborating with explicitly states you must use one method over the other, any method of git interaction will provide the same results. The only time this may not be true is if your work requires <strong><em>very advanced</em></strong> git operations. Most work does not fall into this category. Remember, <strong>you don’t get brownie points</strong> for using a terminal, and <strong>your Data Science ‘card’ won’t be revoked</strong> if you prefer a third-party GUI client. Use whatever takes less time and causes less pain based on your experience and skill set.</p>
+<p>Whatever you feel most comfortable with. Unless the organization you are collaborating with explicitly states you must use one method over the other, any method of git interaction will provide the same results. The only time this may not be true is if your work requires <strong><em>very advanced</em></strong> git operations. Most work does not fall into this category. Remember, <strong>you don’t get brownie points</strong> for using a terminal, and <strong>your Data Science ‘card’ won’t be revoked</strong> if you prefer a third-party GUI client. Use whatever takes the least amount of time and pain based on your experience and skill set.</p>
 </section>
 </section>
 <section id="what-is-git-merge-and-why-are-people-afraid-of-it" class="level1">
 <h1>What is <code>git merge</code> And Why Are People Afraid of It?</h1>
+<p>At it’s core, <code>git merge</code> is simply how users can join two or more development histories, (AKA: <em>git</em> <em>branches</em>) together. <code>git merge</code> is essential to working collaboratively in git simply because it is the proper way incorporate git’s functionality of version control into your work. When used properly, this allows users to safely modify existing work or create additional work that can be safely incorporated into a online repository that others can then work and interact with.</p>
+<p>If <code>git merge</code> is simply just joining branches together…it can’t be all that bad right?</p>
+<p>Nope. Wrong. Please understand that this is a <strong>overly simple</strong> explanation of what <code>git merge</code> is. One can literally spend hours reading documentation/content on the different types of git merges. It is a rabbit hole reserved only for those brave enough to enter.</p>
+<p>It is without a doubt that most people who are afraid of git merges are afraid because of <code>git merge</code> conflicts; The bane of every git user’s existence.</p>
+<div class="img-fluid quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mergeburn.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Someone tries to add something to a pot on a stove with a long stick. The pot quickly is set on fire. The room quickly fills with fire."></p>
+<figcaption>When the <s>intern</s> <em>any git newbie</em> experiences their first git merge conflict</figcaption>
+</figure>
+</div>
 </section>
 <section id="what-is-a-git-merge-conflict" class="level1">
 <h1>What is A <code>git merge</code> Conflict?</h1>
+<p>As intimidating as it is…the concept of a <code>git merge</code> conflict is actually quite simple:</p>
+<blockquote class="blockquote">
+<p><em>“Merge conflicts occur when <strong>competing changes</strong> are made to the same line of a file, or when one person edits a file and another person deletes the same file.”</em></p>
+<p>- <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line">GitHub Docs</a> <em>(“Resolving a merge conflict using the command line”)</em></p>
+</blockquote>
+<p>So if it’s this simple…why is it intimidating? Probably because your once beautiful-looking code can get riddled with greater-than <code>&gt;&gt;&gt;&gt;</code> and less-than <code>&lt;&lt;&lt;&lt;</code> signs seemingly without warning:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/conflict_code.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
 </section>
 <section id="git-merge-conflicts-in-the-wild" class="level1">
 <h1><code>git merge</code> Conflicts in the Wild</h1>

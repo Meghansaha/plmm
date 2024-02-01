@@ -48,11 +48,31 @@ For the "fluffiest" git experience, users can use [third-party Git GUI clients](
 
 ## Which Method Should I Use?
 
-Whatever you feel most comfortable with. Unless the organization you are collaborating with explicitly states you must use one method over the other, any method of git interaction will provide the same results. The only time this may not be true is if your work requires ***very advanced*** git operations. Most work does not fall into this category. Remember, **you don't get brownie points** for using a terminal, and **your Data Science 'card' won't be revoked** if you prefer a third-party GUI client. Use whatever takes less time and causes less pain based on your experience and skill set.
+Whatever you feel most comfortable with. Unless the organization you are collaborating with explicitly states you must use one method over the other, any method of git interaction will provide the same results. The only time this may not be true is if your work requires ***very advanced*** git operations. Most work does not fall into this category. Remember, **you don't get brownie points** for using a terminal, and **your Data Science 'card' won't be revoked** if you prefer a third-party GUI client. Use whatever takes the least amount of time and pain based on your experience and skill set.
 
 # What is `git merge` And Why Are People Afraid of It?
 
+At it's core, `git merge` is simply how users can join two or more development histories, (AKA: *git* *branches*) together. `git merge` is essential to working collaboratively in git simply because it is the proper way incorporate git's functionality of version control into your work. When used properly, this allows users to safely modify existing work or create additional work that can be safely incorporated into a online repository that others can then work and interact with.
+
+If `git merge` is simply just joining branches together...it can't be all that bad right?
+
+Nope. Wrong. Please understand that this is a **overly simple** explanation of what `git merge` is. One can literally spend hours reading documentation/content on the different types of git merges. It is a rabbit hole reserved only for those brave enough to enter.
+
+It is without a doubt that most people who are afraid of git merges are afraid because of `git merge` conflicts; The bane of every git user's existence.
+
+![When the <s>intern</s> <em>any git newbie</em> experiences their first git merge conflict](images/mergeburn.gif){fig-alt="Someone tries to add something to a pot on a stove with a long stick. The pot quickly is set on fire. The room quickly fills with fire." fig-align="center"}
+
 # What is A `git merge` Conflict?
+
+As intimidating as it is...the concept of a `git merge` conflict is actually quite simple:
+
+> *"Merge conflicts occur when **competing changes** are made to the same line of a file, or when one person edits a file and another person deletes the same file."*
+>
+> \- [GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line) *("Resolving a merge conflict using the command line")*
+
+So if it's this simple...why is it intimidating? Probably because your once beautiful-looking code can get riddled with greater-than `>>>>` and less-than `<<<<` signs seemingly without warning:
+
+![](images/conflict_code.png){fig-align="center"}
 
 # `git merge` Conflicts in the Wild
 
