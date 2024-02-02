@@ -74,15 +74,15 @@ ul.task-list li input[type="checkbox"] {
 </div>
 <section id="about" class="level1">
 <h1>About</h1>
-<p>It’s probably a safe bet to say that most of the Posit Community have at least heard of the version control system, “<a href="https://en.wikipedia.org/wiki/Git">git</a>,” or the developer platform “<a href="https://en.wikipedia.org/wiki/GitHub">GitHub</a>.” A smaller number of people can probably say they actually use git, but an even smaller number would possibly say they feel comfortable collaborating with git. This may be due to unique circumstances, like being a lone data science unicorn, having antiquated data workflows, or because users can’t expand upon their git knowledge to introduce collaborative functionality to their workflows.</p>
+<p>It’s probably a safe bet to say that most of the Posit Community have at least heard of the version control system, “<a href="https://git-scm.com/">Git</a>,” or the developer platform “<a href="https://en.wikipedia.org/wiki/GitHub">GitHub</a>.” A smaller number of people can probably say they actually use Git, but an even smaller number would possibly say they feel comfortable collaborating with Git. This may be due to unique circumstances, like being a lone data science unicorn, having antiquated data workflows, or because users can’t expand upon their Git knowledge to introduce collaborative functionality to their workflows.</p>
 <div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/git_logo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The Git Logo"></p>
 <figcaption>“Git” seems to be the version control software of choice within the Posit Community.</figcaption>
 </figure>
 </div>
-<p>Whatever the reason, it is hard to deny how imperative version control is to collaborative data science work, and while git is not the only version control system that exists, its use in the Posit Community is undeniably strong, possibly due in part to RStudio’s integration of the software along with the development of the <a href="https://usethis.r-lib.org/reference/index.html#git-and-github"><code>usethis</code> package</a> as well.</p>
-<p><strong><em>“Please Let Me Merge”</em></strong> is geared towards those who may feel comfortable working independently with git but need some confidence when working collaboratively. Just like novice drivers can learn to confidently (and <strong>safely!</strong>) merge onto <small>(<em>seemingly</em>)</small> intimidating highways, those new to collaborating with git can also conquer git merges with some exposure and preparation.</p>
+<p>Whatever the reason, it is hard to deny how imperative version control is to collaborative data science work, and while Git is not the only version control system that exists, its use in the Posit Community is undeniably strong, possibly due in part to RStudio’s integration of the software along with the development of the <a href="https://usethis.r-lib.org/reference/index.html#git-and-github"><code>usethis</code> package</a> as well.</p>
+<p><strong><em>“Please Let Me Merge”</em></strong> is geared towards those who may feel comfortable working independently with Git but need some confidence when working collaboratively. Just like novice drivers can learn to confidently (and <strong>safely!</strong>) merge onto <small>(<em>seemingly</em>)</small> intimidating highways, those new to collaborating with Git can also conquer Git merges with some exposure and preparation.</p>
 <div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/initiald.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A gif from the anime Initial D with cars racing"></p>
@@ -92,10 +92,10 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="interacting-with-git" class="level1">
 <h1>Interacting With Git</h1>
-<p>For those of us that use git, we have a few options when it comes to interacting with git and github:</p>
+<p>For those of us that use Git, we have a few options when it comes to interacting with Git and GitHub:</p>
 <section id="rstudio-graphical-user-interface-gui" class="level2">
 <h2 class="anchored" data-anchor-id="rstudio-graphical-user-interface-gui">RStudio Graphical User Interface (GUI)</h2>
-<p>For R users, this may be the most popular method of interacting with git. Undoubtedly due to RStudio’s ability to shield users from the traditional terminal view. Users that interact with git in this way only need to save their work, commit their changes, and push up to their repository that’s probably on GitHub.</p>
+<p>For R users, this may be the most popular method of interacting with Git. Undoubtedly due to RStudio’s ability to shield users from the traditional terminal view. Users that interact with Git in this way only need to save their work, commit their changes, and push up to their repository that’s probably on GitHub.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/rstudio_gui.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A screenshot of RStudio's Graphical User Interface that allows users to interact with the git version control system"></p>
@@ -104,7 +104,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="command-line-terminals" class="level2">
 <h2 class="anchored" data-anchor-id="command-line-terminals">Command Line Terminals</h2>
-<p>For the hardcore git veterans (or for those that just want a ‘fluff-free’ git experience), the command line may be their tool of choice. RStudio users have the option of interacting with their system’s terminal within RStudio; but <a href="https://www.atlassian.com/git/tutorials/git-bash">git bash</a> and standard terminal shell programs like <a href="https://en.wikipedia.org/wiki/PowerShell">PowerShell</a> for Windows and <a href="https://en.wikipedia.org/wiki/Terminal_(macOS)">Terminal</a> for macOs can also be used outside of RStudio.</p>
+<p>For the hardcore Git veterans (or for those that just want a ‘fluff-free’ Git experience), the command line may be their tool of choice. RStudio users have the option of interacting with their system’s terminal within RStudio; but <a href="https://www.atlassian.com/git/tutorials/git-bash">Git Bash</a> and standard terminal shell programs like <a href="https://en.wikipedia.org/wiki/PowerShell">PowerShell</a> for Windows and <a href="https://en.wikipedia.org/wiki/Terminal_(macOS)">Terminal</a> for macOs can also be used outside of RStudio.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/git_bash.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A screenshot of the Git Bash application. An example of a Command Line Terminal."></p>
@@ -113,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="git-gui-clients" class="level2">
 <h2 class="anchored" data-anchor-id="git-gui-clients">Git GUI Clients</h2>
-<p>For the “fluffiest” git experience, users can use <a href="https://git-scm.com/downloads/guis">third-party Git GUI clients</a> like <a href="https://desktop.github.com/">GitHub Desktop</a> or <a href="https://www.gitkraken.com/">GitKraken</a>. Git GUI clients can be free or proprietary and usually have some added benefits like improved error messaging, accessibility to most git commands and functionality, and in some cases added visualizations to assist with general version control and commit histories.</p>
+<p>For the “fluffiest” Git experience, users can use <a href="https://git-scm.com/downloads/guis">third-party Git GUI clients</a> like <a href="https://desktop.github.com/">GitHub Desktop</a> or <a href="https://www.gitkraken.com/">GitKraken</a>. Git GUI clients can be free or proprietary and usually have some added benefits like improved error messaging, accessibility to most Git commands and functionality, and in some cases added visualizations to assist with general version control and commit histories.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/gh_desktop.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A screenshot of the Git Client program GitHub Desktop"></p>
@@ -122,41 +122,87 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="which-method-should-i-use" class="level2">
 <h2 class="anchored" data-anchor-id="which-method-should-i-use">Which Method Should I Use?</h2>
-<p>Whatever you feel most comfortable with. Unless the organization you are collaborating with explicitly states you must use one method over the other, any method of git interaction will provide the same results. The only time this may not be true is if your work requires <strong><em>very advanced</em></strong> git operations. Most work does not fall into this category. Remember, <strong>you don’t get brownie points</strong> for using a terminal, and <strong>your Data Science ‘card’ won’t be revoked</strong> if you prefer a third-party GUI client. Use whatever takes the least amount of time and pain based on your experience and skill set.</p>
+<p>Whatever you feel most comfortable with. Unless the organization you are collaborating with explicitly states you must use one method over the other, any method of Git interaction will provide the same results. The only time this may not be true is if your work requires <strong><em>very advanced</em></strong> Git operations. Most work does not fall into this category. Remember, <strong>you don’t get brownie points</strong> for using a terminal, and <strong>your Data Science ‘card’ won’t be revoked</strong> if you prefer a third-party GUI client. Use whatever takes the least amount of time and pain based on your experience and skill set.</p>
 </section>
 </section>
 <section id="what-is-git-merge-and-why-are-people-afraid-of-it" class="level1">
 <h1>What is <code>git merge</code> And Why Are People Afraid of It?</h1>
-<p>At it’s core, <code>git merge</code> is simply how users can join two or more development histories, (AKA: <em>git</em> <em>branches</em>) together. <code>git merge</code> is essential to working collaboratively in git simply because it is the proper way incorporate git’s functionality of version control into your work. When used properly, this allows users to safely modify existing work or create additional work that can be safely incorporated into a online repository that others can then work and interact with.</p>
+<p>At it’s core, <code>git merge</code> is simply how users can join two or more development histories, (AKA: <em>Git</em> <em>branches</em>) together. <code>git merge</code> is essential to working collaboratively in Git simply because it is the proper way incorporate Git’s functionality of version control into your work. When used correctly, this allows users to safely modify existing work or create additional work that can be safely incorporated into an online repository with which others can work and interact.</p>
 <p>If <code>git merge</code> is simply just joining branches together…it can’t be all that bad right?</p>
-<p>Nope. Wrong. Please understand that this is a <strong>overly simple</strong> explanation of what <code>git merge</code> is. One can literally spend hours reading documentation/content on the different types of git merges. It is a rabbit hole reserved only for those brave enough to enter.</p>
-<p>It is without a doubt that most people who are afraid of git merges are afraid because of <code>git merge</code> conflicts; The bane of every git user’s existence.</p>
+<p>Nope. Wrong. Please understand that this is a <strong>overly simple</strong> explanation of what <code>git merge</code> is. One can literally spend hours reading documentation/content on the different types of Git merges. It is a rabbit hole reserved only for those brave enough to enter.</p>
+<p>It is without a doubt that most people who are afraid of Git merges are afraid because of <code>git merge</code> conflicts; The bane of every Git user’s existence.</p>
 <div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/mergeburn.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Someone tries to add something to a pot on a stove with a long stick. The pot quickly is set on fire. The room quickly fills with fire."></p>
-<figcaption>When the <s>intern</s> <em>any git newbie</em> experiences their first git merge conflict</figcaption>
+<figcaption>When the <s>intern</s> <em>any Git newbie</em> experiences their first Git merge conflict</figcaption>
 </figure>
 </div>
 </section>
 <section id="what-is-a-git-merge-conflict" class="level1">
 <h1>What is A <code>git merge</code> Conflict?</h1>
 <p>As intimidating as it is…the concept of a <code>git merge</code> conflict is actually quite simple:</p>
+<p><br></p>
 <blockquote class="blockquote">
 <p><em>“Merge conflicts occur when <strong>competing changes</strong> are made to the same line of a file, or when one person edits a file and another person deletes the same file.”</em></p>
 <p>- <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line">GitHub Docs</a> <em>(“Resolving a merge conflict using the command line”)</em></p>
 </blockquote>
-<p>So if it’s this simple…why is it intimidating? Probably because your once beautiful-looking code can get riddled with greater-than <code>&gt;&gt;&gt;&gt;</code> and less-than <code>&lt;&lt;&lt;&lt;</code> signs seemingly without warning:</p>
-<div class="quarto-figure quarto-figure-center">
+<p><br></p>
+<p>So if it’s this simple…why is it intimidating? Probably because your once beautiful-looking code can get riddled with greater-than <code>&gt;&gt;&gt;&gt;</code> and less-than <code>&lt;&lt;&lt;&lt;</code> signs seemingly without warning like this:</p>
+<div class="img-fluid quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="images/conflict_code.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p><img src="images/conflict_code.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A screenshot of a beautiful snippet of R code before and after a failed git merge"></p>
+<figcaption>When Git detects version discrepancies it rudely inserts some syntax to let the user know it needs help resolving the conflict</figcaption>
 </figure>
 </div>
+<p><br></p>
+<p>And depending on how you are choosing to interact with Git, you can also get blocks of text like this in the terminal or RStudio GUI:</p>
+<div class="img-fluid quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/terminal_conflict.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A screenshot of a git merge conflict from a rebase attempt."></p>
+<figcaption>A Wall of <s>text</s> Shame Letting us Know We Messed Up</figcaption>
+</figure>
+</div>
+<p>Maybe it’s the syntax, or the way the word <code>CONFLICT</code> is in all caps here, or maybe because Git asks us if we want to <strong>abort</strong> our merge attempts; when this wall of text graces users’ screens, it can be enough to strike fear in the hearts of many. What Git newbies fail to realize, though, is that there is nothing to be afraid of. This is simply Git’s way of nicely saying, <em>“<strong>Hey. I’m only some program, and I’m actually not smart enough to figure out which version of this thing is the version you want. Can you please choose so I can finish up for you?“</strong></em></p>
+<p>In this instance, the user is given the proverbial ‘steering wheel’ and must decide on how to continue the merge. It is my belief that this stresses people out either because of the ‘theatrics’ of it all (I mean, how would you feel if you thought a computer was yelling at you in caps?), or because they are afraid to make a decision about what needs to move forward. This all used to be true for me…until I had to start using Git to work with people…and that work had hard, demanding deadlines that required me to figure these things out…fast.</p>
 </section>
 <section id="git-merge-conflicts-in-the-wild" class="level1">
 <h1><code>git merge</code> Conflicts in the Wild</h1>
+<p>Let’s face it. Those who may feel uncomfortable collaborating with Git simply may not need to, or they can usually find some workaround <em>(like burning down their local repos faster than Jenny Bryan will <a href="https://www.tidyverse.org/blog/2017/12/workflow-vs-script/">burn your computer down</a> if you dare use <code>setwd()</code> in R)</em> to make things work for them. In my personal case, I had to get really familiar with Git REAL fast because I needed to collaborate with others and ‘collaborate with myself’ across LOTS of branches within one project.</p>
+<div class="img-fluid quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/no.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Eric from boy meets world shouting the word &quot;No&quot;"></p>
+<figcaption>My reaction when I was SO SURE that Git merge was going to be conflict-free 🔥</figcaption>
+</figure>
+</div>
+<p><br></p>
+<p>Working as a data scientist with oncology clinical trial data is a challenging but rewarding position that afforded me lots of hours of pain and tears in my Git terminal that left me not only saying, “<em>Please let me merge before I cry,“</em> but also things like&nbsp;<em>“Why did you change this?”, “WHAT are you doing?”</em> and probably some creative expletives I won’t repeat here because I’m a professional.</p>
+<p><br></p>
+<p>While it would be difficult to list every time I’ve encountered a merge conflict in the wild, a few painful memories come to mind:</p>
+<ul>
+<li><p>The time I came back from parental leave for <strong>six months</strong> and started working on stuff before rebasing or pulling from <code>main</code>/<code>master</code></p></li>
+<li><p>The time one ‘urgent’ thing was asked for on one branch, but then a ‘more urgent’ thing was asked for and I switched to the ‘more urgent’ branch <strong>without committing</strong> the ‘urgent’ thing.</p></li>
+<li><p>The time my compulsive tendencies forced me to make ✨formatting and style changes✨to code someone had <strong>already pulled and started working on</strong>.</p></li>
+<li><p>The time karma got me for working on a personal project on my work computer, but then also working on the personal project on my personal computer seperately, and then <strong>having to deal with the aftermath</strong>.</p></li>
+</ul>
 </section>
 <section id="preparing-for-better-merges" class="level1">
 <h1>Preparing For Better Merges</h1>
+<p>While it is probably unrealistic to say you can completely avoid Git merge conflicts there are definitely things you can do to better set yourself up for success. Just like with learning how to drive a car, you can absolutely (and should sometimes reference) a driving manual (or some documentation on Git merges); but it can’t be argued that the best way to learn how to drive is by <em>practicing</em> driving.</p>
+<p>When you think about it, even seasoned drivers with years of experience aren’t perfect. Sometimes things happen. Accidents. Unexpected road blocks. Annoying construction detours. The difference though between beginner and seasoned drivers are experience and exposure. Every time you are exposed to a different challenge or scenario you can use the experience to better prepare yourself for the next time.</p>
+<p>So while I can’t provide a fool-proof guide on completely avoiding Git merge conflicts, I can provide a few highlights of things I’ve learned while working collaboratively with Git:</p>
+<ul>
+<li><p>Think <strong>before you start working</strong> or touching ANYTHING. Did you pull? Are you on the right branch? Don’t let external “fires” fluster you before you start.</p></li>
+<li><p><strong>Don’t leave anything uncommitted</strong> if you can help it. Uncommitted changes can and will follow you around if you let them.</p></li>
+<li><p><strong>Communicate with your collaborators</strong>. If you know someone is working on something, try to avoid working on that file if possible. Sometimes this can’t be avoided, but it can save a lot of problems if you are able to cleanly “<a href="https://en.wikipedia.org/wiki/Hot_potato"><em>hot-potato</em></a>” your work between collaborators.</p></li>
+<li><p><strong>Decide a work style</strong> that works for your situation when it comes to making commits. Committing frequently on huge tasks is great, but what happens when you need to merge and there’s conflicts with <strong>EACH. AND. EVERY. COMMIT?</strong> Will squashing your commits be appropriate or will you be ready to go through and resolve each commit if need be?</p></li>
+</ul>
+<p>While this topic may be appropriate for those who can already minimally interact with Git, I hope it would still resonate with Git users of all skill levels and might even introduce some concepts for complete beginners to keep in the back of their minds. This will be for anyone who has ever held their breath after they pushed or pulled at the terminal, those who are seasoned veterans and may chuckle as they’ve undoubtedly experienced the pain of merge conflicts, and those who may need that little extra push to tackle that merge conflict the next time they come face-to-face with it.</p>
+<div class="img-fluid quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/heart.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="An animated pink heart with the text you got this in the center"></p>
+<figcaption>We Got This!!</figcaption>
+</figure>
+</div>
 </section>
 
 </main>

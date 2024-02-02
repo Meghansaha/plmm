@@ -14,66 +14,118 @@ fontcolor: "#000000"
 
 # About
 
-It's probably a safe bet to say that most of the Posit Community have at least heard of the version control system, "[git](https://en.wikipedia.org/wiki/Git)," or the developer platform "[GitHub](https://en.wikipedia.org/wiki/GitHub)." A smaller number of people can probably say they actually use git, but an even smaller number would possibly say they feel comfortable collaborating with git. This may be due to unique circumstances, like being a lone data science unicorn, having antiquated data workflows, or because users can't expand upon their git knowledge to introduce collaborative functionality to their workflows.
+It's probably a safe bet to say that most of the Posit Community have at least heard of the version control system, "[Git](https://git-scm.com/)," or the developer platform "[GitHub](https://en.wikipedia.org/wiki/GitHub)." A smaller number of people can probably say they actually use Git, but an even smaller number would possibly say they feel comfortable collaborating with Git. This may be due to unique circumstances, like being a lone data science unicorn, having antiquated data workflows, or because users can't expand upon their Git knowledge to introduce collaborative functionality to their workflows.
 
 !["Git" seems to be the version control software of choice within the Posit Community.](images/git_logo.png){fig-alt="The Git Logo" fig-align="center"}
 
-Whatever the reason, it is hard to deny how imperative version control is to collaborative data science work, and while git is not the only version control system that exists, its use in the Posit Community is undeniably strong, possibly due in part to RStudio's integration of the software along with the development of the [`usethis` package](https://usethis.r-lib.org/reference/index.html#git-and-github) as well.
+Whatever the reason, it is hard to deny how imperative version control is to collaborative data science work, and while Git is not the only version control system that exists, its use in the Posit Community is undeniably strong, possibly due in part to RStudio's integration of the software along with the development of the [`usethis` package](https://usethis.r-lib.org/reference/index.html#git-and-github) as well.
 
-***"Please Let Me Merge"*** is geared towards those who may feel comfortable working independently with git but need some confidence when working collaboratively. Just like novice drivers can learn to confidently (and **safely!**) merge onto <small>(*seemingly*)</small> intimidating highways, those new to collaborating with git can also conquer git merges with some exposure and preparation.
+***"Please Let Me Merge"*** is geared towards those who may feel comfortable working independently with Git but need some confidence when working collaboratively. Just like novice drivers can learn to confidently (and **safely!**) merge onto <small>(*seemingly*)</small> intimidating highways, those new to collaborating with Git can also conquer Git merges with some exposure and preparation.
 
 ![When drivers finally learn what the 'acceleration lane' of a highway is.](images/initiald.gif){fig-alt="A gif from the anime Initial D with cars racing" fig-align="center"}
 
 # Interacting With Git
 
-For those of us that use git, we have a few options when it comes to interacting with git and github:
+For those of us that use Git, we have a few options when it comes to interacting with Git and GitHub:
 
 ## RStudio Graphical User Interface (GUI)
 
-For R users, this may be the most popular method of interacting with git. Undoubtedly due to RStudio's ability to shield users from the traditional terminal view. Users that interact with git in this way only need to save their work, commit their changes, and push up to their repository that's probably on GitHub.
+For R users, this may be the most popular method of interacting with Git. Undoubtedly due to RStudio's ability to shield users from the traditional terminal view. Users that interact with Git in this way only need to save their work, commit their changes, and push up to their repository that's probably on GitHub.
 
 ![](images/rstudio_gui.png){fig-alt="A screenshot of RStudio's Graphical User Interface that allows users to interact with the git version control system" fig-align="center" width="100%"}
 
 ## Command Line Terminals
 
-For the hardcore git veterans (or for those that just want a 'fluff-free' git experience), the command line may be their tool of choice. RStudio users have the option of interacting with their system's terminal within RStudio; but [git bash](https://www.atlassian.com/git/tutorials/git-bash) and standard terminal shell programs like [PowerShell](https://en.wikipedia.org/wiki/PowerShell) for Windows and [Terminal](https://en.wikipedia.org/wiki/Terminal_(macOS)) for macOs can also be used outside of RStudio.
+For the hardcore Git veterans (or for those that just want a 'fluff-free' Git experience), the command line may be their tool of choice. RStudio users have the option of interacting with their system's terminal within RStudio; but [Git Bash](https://www.atlassian.com/git/tutorials/git-bash) and standard terminal shell programs like [PowerShell](https://en.wikipedia.org/wiki/PowerShell) for Windows and [Terminal](https://en.wikipedia.org/wiki/Terminal_(macOS)) for macOs can also be used outside of RStudio.
 
 ![](images/git_bash.png){fig-alt="A screenshot of the Git Bash application. An example of a Command Line Terminal." fig-align="center"}
 
 ## Git GUI Clients
 
-For the "fluffiest" git experience, users can use [third-party Git GUI clients](https://git-scm.com/downloads/guis) like [GitHub Desktop](https://desktop.github.com/) or [GitKraken](https://www.gitkraken.com/). Git GUI clients can be free or proprietary and usually have some added benefits like improved error messaging, accessibility to most git commands and functionality, and in some cases added visualizations to assist with general version control and commit histories.
+For the "fluffiest" Git experience, users can use [third-party Git GUI clients](https://git-scm.com/downloads/guis) like [GitHub Desktop](https://desktop.github.com/) or [GitKraken](https://www.gitkraken.com/). Git GUI clients can be free or proprietary and usually have some added benefits like improved error messaging, accessibility to most Git commands and functionality, and in some cases added visualizations to assist with general version control and commit histories.
 
 ![](images/gh_desktop.png){fig-alt="A screenshot of the Git Client program GitHub Desktop" fig-align="center" width="100%"}
 
 ## Which Method Should I Use?
 
-Whatever you feel most comfortable with. Unless the organization you are collaborating with explicitly states you must use one method over the other, any method of git interaction will provide the same results. The only time this may not be true is if your work requires ***very advanced*** git operations. Most work does not fall into this category. Remember, **you don't get brownie points** for using a terminal, and **your Data Science 'card' won't be revoked** if you prefer a third-party GUI client. Use whatever takes the least amount of time and pain based on your experience and skill set.
+Whatever you feel most comfortable with. Unless the organization you are collaborating with explicitly states you must use one method over the other, any method of Git interaction will provide the same results. The only time this may not be true is if your work requires ***very advanced*** Git operations. Most work does not fall into this category. Remember, **you don't get brownie points** for using a terminal, and **your Data Science 'card' won't be revoked** if you prefer a third-party GUI client. Use whatever takes the least amount of time and pain based on your experience and skill set.
 
 # What is `git merge` And Why Are People Afraid of It?
 
-At it's core, `git merge` is simply how users can join two or more development histories, (AKA: *git* *branches*) together. `git merge` is essential to working collaboratively in git simply because it is the proper way incorporate git's functionality of version control into your work. When used properly, this allows users to safely modify existing work or create additional work that can be safely incorporated into a online repository that others can then work and interact with.
+At it's core, `git merge` is simply how users can join two or more development histories, (AKA: *Git* *branches*) together. `git merge` is essential to working collaboratively in Git simply because it is the proper way incorporate Git's functionality of version control into your work. When used correctly, this allows users to safely modify existing work or create additional work that can be safely incorporated into an online repository with which others can work and interact.
 
 If `git merge` is simply just joining branches together...it can't be all that bad right?
 
-Nope. Wrong. Please understand that this is a **overly simple** explanation of what `git merge` is. One can literally spend hours reading documentation/content on the different types of git merges. It is a rabbit hole reserved only for those brave enough to enter.
+Nope. Wrong. Please understand that this is a **overly simple** explanation of what `git merge` is. One can literally spend hours reading documentation/content on the different types of Git merges. It is a rabbit hole reserved only for those brave enough to enter.
 
-It is without a doubt that most people who are afraid of git merges are afraid because of `git merge` conflicts; The bane of every git user's existence.
+It is without a doubt that most people who are afraid of Git merges are afraid because of `git merge` conflicts; The bane of every Git user's existence.
 
-![When the <s>intern</s> <em>any git newbie</em> experiences their first git merge conflict](images/mergeburn.gif){fig-alt="Someone tries to add something to a pot on a stove with a long stick. The pot quickly is set on fire. The room quickly fills with fire." fig-align="center"}
+![When the <s>intern</s> <em>any Git newbie</em> experiences their first Git merge conflict](images/mergeburn.gif){fig-alt="Someone tries to add something to a pot on a stove with a long stick. The pot quickly is set on fire. The room quickly fills with fire." fig-align="center"}
 
 # What is A `git merge` Conflict?
 
 As intimidating as it is...the concept of a `git merge` conflict is actually quite simple:
 
+<br>
+
 > *"Merge conflicts occur when **competing changes** are made to the same line of a file, or when one person edits a file and another person deletes the same file."*
 >
 > \- [GitHub Docs](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line) *("Resolving a merge conflict using the command line")*
 
-So if it's this simple...why is it intimidating? Probably because your once beautiful-looking code can get riddled with greater-than `>>>>` and less-than `<<<<` signs seemingly without warning:
+<br>
 
-![](images/conflict_code.png){fig-align="center"}
+So if it's this simple...why is it intimidating? Probably because your once beautiful-looking code can get riddled with greater-than `>>>>` and less-than `<<<<` signs seemingly without warning like this:
+
+![When Git detects version discrepancies it rudely inserts some syntax to let the user know it needs help resolving the conflict](images/conflict_code.png){fig-alt="A screenshot of a beautiful snippet of R code before and after a failed git merge" fig-align="center"}
+
+<br>
+
+And depending on how you are choosing to interact with Git, you can also get blocks of text like this in the terminal or RStudio GUI:
+
+![A Wall of <s>text</s> Shame Letting us Know We Messed Up](images/terminal_conflict.png){fig-alt="A screenshot of a git merge conflict from a rebase attempt." fig-align="center"}
+
+Maybe it's the syntax, or the way the word `CONFLICT` is in all caps here, or maybe because Git asks us if we want to **abort** our merge attempts; when this wall of text graces users' screens, it can be enough to strike fear in the hearts of many. What Git newbies fail to realize, though, is that there is nothing to be afraid of. This is simply Git's way of nicely saying, *"**Hey. I'm only some program, and I'm actually not smart enough to figure out which version of this thing is the version you want. Can you please choose so I can finish up for you?"***
+
+In this instance, the user is given the proverbial 'steering wheel' and must decide on how to continue the merge. It is my belief that this stresses people out either because of the 'theatrics' of it all (I mean, how would you feel if you thought a computer was yelling at you in caps?), or because they are afraid to make a decision about what needs to move forward. This all used to be true for me...until I had to start using Git to work with people...and that work had hard, demanding deadlines that required me to figure these things out...fast.
 
 # `git merge` Conflicts in the Wild
 
+Let's face it. Those who may feel uncomfortable collaborating with Git simply may not need to, or they can usually find some workaround *(like burning down their local repos faster than Jenny Bryan will [burn your computer down](https://www.tidyverse.org/blog/2017/12/workflow-vs-script/) if you dare use `setwd()` in R)* to make things work for them. In my personal case, I had to get really familiar with Git REAL fast because I needed to collaborate with others and 'collaborate with myself' across LOTS of branches within one project.
+
+![My reaction when I was SO SURE that Git merge was going to be conflict-free 🔥](images/no.gif){fig-alt="Eric from boy meets world shouting the word \"No\"" fig-align="center"}
+
+<br>
+
+Working as a data scientist with oncology clinical trial data is a challenging but rewarding position that afforded me lots of hours of pain and tears in my Git terminal that left me not only saying, "*Please let me merge before I cry,"* but also things like *"Why did you change this?", "WHAT are you doing?"* and probably some creative expletives I won't repeat here because I'm a professional.
+
+<br>
+
+While it would be difficult to list every time I've encountered a merge conflict in the wild, a few painful memories come to mind:
+
+-   The time I came back from parental leave for **six months** and started working on stuff before rebasing or pulling from `main`/`master`
+
+-   The time one 'urgent' thing was asked for on one branch, but then a 'more urgent' thing was asked for and I switched to the 'more urgent' branch **without committing** the 'urgent' thing.
+
+-   The time my compulsive tendencies forced me to make ✨formatting and style changes✨to code someone had **already pulled and started working on**.
+
+-   The time karma got me for working on a personal project on my work computer, but then also working on the personal project on my personal computer seperately, and then **having to deal with the aftermath**.
+
 # Preparing For Better Merges
+
+While it is probably unrealistic to say you can completely avoid Git merge conflicts there are definitely things you can do to better set yourself up for success. Just like with learning how to drive a car, you can absolutely (and should sometimes reference) a driving manual (or some documentation on Git merges); but it can't be argued that the best way to learn how to drive is by *practicing* driving.
+
+When you think about it, even seasoned drivers with years of experience aren't perfect. Sometimes things happen. Accidents. Unexpected road blocks. Annoying construction detours. The difference though between beginner and seasoned drivers are experience and exposure. Every time you are exposed to a different challenge or scenario you can use the experience to better prepare yourself for the next time.
+
+So while I can't provide a fool-proof guide on completely avoiding Git merge conflicts, I can provide a few highlights of things I've learned while working collaboratively with Git:
+
+-   Think **before you start working** or touching ANYTHING. Did you pull? Are you on the right branch? Don't let external "fires" fluster you before you start.
+
+-   **Don't leave anything uncommitted** if you can help it. Uncommitted changes can and will follow you around if you let them.
+
+-   **Communicate with your collaborators**. If you know someone is working on something, try to avoid working on that file if possible. Sometimes this can't be avoided, but it can save a lot of problems if you are able to cleanly "[*hot-potato*](https://en.wikipedia.org/wiki/Hot_potato)" your work between collaborators.
+
+-   **Decide a work style** that works for your situation when it comes to making commits. Committing frequently on huge tasks is great, but what happens when you need to merge and there's conflicts with **EACH. AND. EVERY. COMMIT?** Will squashing your commits be appropriate or will you be ready to go through and resolve each commit if need be?
+
+While this topic may be appropriate for those who can already minimally interact with Git, I hope it would still resonate with Git users of all skill levels and might even introduce some concepts for complete beginners to keep in the back of their minds. This will be for anyone who has ever held their breath after they pushed or pulled at the terminal, those who are seasoned veterans and may chuckle as they've undoubtedly experienced the pain of merge conflicts, and those who may need that little extra push to tackle that merge conflict the next time they come face-to-face with it.
+
+![We Got This!!](images/heart.gif){fig-alt="An animated pink heart with the text you got this in the center" fig-align="center"}
