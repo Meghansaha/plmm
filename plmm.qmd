@@ -5,8 +5,8 @@ theme:
   - style.css
 linkcolor: "#045D59"
 toc-location: left
+toc-title: "Details:"
 toc: true
-toc-title: "Contents"
 fontcolor: "#000000"
 ---
 
