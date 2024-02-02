@@ -60,7 +60,7 @@ Nope. Wrong. Please understand that this is a **overly simple** explanation of w
 
 It is without a doubt that most people who are afraid of Git merges are afraid because of `git merge` conflicts; The bane of every Git user's existence.
 
-![When the <s>intern</s> <em>any Git newbie</em> experiences their first Git merge conflict](images/mergeburn.gif){fig-alt="Someone tries to add something to a pot on a stove with a long stick. The pot quickly is set on fire. The room quickly fills with fire." fig-align="center"}
+![When <s>the intern</s> <em>any Git newbie</em> experiences their first Git merge conflict](images/mergeburn.gif){fig-alt="Someone tries to add something to a pot on a stove with a long stick. The pot quickly is set on fire. The room quickly fills with fire." fig-align="center"}
 
 # What is A `git merge` Conflict?
 
@@ -112,7 +112,7 @@ While it would be difficult to list every time I've encountered a merge conflict
 
 # Preparing For Better Merges
 
-While it is probably unrealistic to say you can completely avoid Git merge conflicts there are definitely things you can do to better set yourself up for success. Just like with learning how to drive a car, you can absolutely (and should sometimes reference) a driving manual (or some documentation on Git merges); but it can't be argued that the best way to learn how to drive is by *practicing* driving.
+While it is probably unrealistic to say you can completely avoid Git merge conflicts there are definitely things you can do to better set yourself up for success. Just like with learning how to drive a car, you can absolutely read (and should sometimes reference) a driving manual (or some documentation on Git merges); but it can't be argued that the best way to learn how to drive is by *practicing* driving.
 
 When you think about it, even seasoned drivers with years of experience aren't perfect. Sometimes things happen. Accidents. Unexpected road blocks. Annoying construction detours. The difference though between beginner and seasoned drivers are experience and exposure. Every time you are exposed to a different challenge or scenario you can use the experience to better prepare yourself for the next time.
 
@@ -128,4 +128,4 @@ So while I can't provide a fool-proof guide on completely avoiding Git merge con
 
 While this topic may be appropriate for those who can already minimally interact with Git, I hope it would still resonate with Git users of all skill levels and might even introduce some concepts for complete beginners to keep in the back of their minds. This will be for anyone who has ever held their breath after they pushed or pulled at the terminal, those who are seasoned veterans and may chuckle as they've undoubtedly experienced the pain of merge conflicts, and those who may need that little extra push to tackle that merge conflict the next time they come face-to-face with it.
 
-![You may feel this way after resolving your first brutal conflict, but it's going to feel SO GOOD!](images/got_this.jpg){fig-alt="A still image of a battered Sylvester Stallone giving someone a thumbs up" fig-align="center"}
+![You may look this way after resolving your first brutal conflict, but it's going to feel SO GOOD!](images/got_this.jpg){fig-alt="A still image of a battered Sylvester Stallone giving someone a thumbs up" fig-align="center"}
