@@ -108,7 +108,7 @@ While it would be difficult to list every time I've encountered a merge conflict
 
 -   The time my compulsive tendencies forced me to make ✨formatting and style changes✨to code someone had **already pulled and started working on**.
 
--   The time karma got me for working on a personal project on my work computer, but then also working on the personal project on my personal computer seperately, and then **having to deal with the aftermath**.
+-   The time karma got me for working on a personal project on my work computer, but then also working on the personal project on my personal computer separately, and then **having to deal with the aftermath**.
 
 # Preparing For Better Merges
 
