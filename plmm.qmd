@@ -128,4 +128,4 @@ So while I can't provide a fool-proof guide on completely avoiding Git merge con
 
 While this topic may be appropriate for those who can already minimally interact with Git, I hope it would still resonate with Git users of all skill levels and might even introduce some concepts for complete beginners to keep in the back of their minds. This will be for anyone who has ever held their breath after they pushed or pulled at the terminal, those who are seasoned veterans and may chuckle as they've undoubtedly experienced the pain of merge conflicts, and those who may need that little extra push to tackle that merge conflict the next time they come face-to-face with it.
 
-![We Got This!!](images/heart.gif){fig-alt="An animated pink heart with the text you got this in the center" fig-align="center"}
+![You may feel this way after resolving your first brutal conflict, but it's going to feel SO GOOD!](images/got_this.jpg){fig-alt="A still image of a battered Sylvester Stallone giving someone a thumbs up" fig-align="center"}
