@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.528">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>plmm</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="plmm_files/libs/clipboard/clipboard.min.js"></script>
+<script src="plmm_files/libs/quarto-html/quarto.js"></script>
+<script src="plmm_files/libs/quarto-html/popper.min.js"></script>
+<script src="plmm_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="plmm_files/libs/quarto-html/anchor.min.js"></script>
+<link href="plmm_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="plmm_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="plmm_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="plmm_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="plmm_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Details:</h2>
+   
+  <ul>
+  <li><a href="#about" id="toc-about" class="nav-link active" data-scroll-target="#about">About</a></li>
+  <li><a href="#interacting-with-git" id="toc-interacting-with-git" class="nav-link" data-scroll-target="#interacting-with-git">Interacting With Git</a>
+  <ul class="collapse">
+  <li><a href="#rstudio-graphical-user-interface-gui" id="toc-rstudio-graphical-user-interface-gui" class="nav-link" data-scroll-target="#rstudio-graphical-user-interface-gui">RStudio Graphical User Interface (GUI)</a></li>
+  <li><a href="#command-line-terminals" id="toc-command-line-terminals" class="nav-link" data-scroll-target="#command-line-terminals">Command Line Terminals</a></li>
+  <li><a href="#git-gui-clients" id="toc-git-gui-clients" class="nav-link" data-scroll-target="#git-gui-clients">Git GUI Clients</a></li>
+  <li><a href="#which-method-should-i-use" id="toc-which-method-should-i-use" class="nav-link" data-scroll-target="#which-method-should-i-use">Which Method Should I Use?</a></li>
+  </ul></li>
+  <li><a href="#what-is-git-merge-and-why-are-people-afraid-of-it" id="toc-what-is-git-merge-and-why-are-people-afraid-of-it" class="nav-link" data-scroll-target="#what-is-git-merge-and-why-are-people-afraid-of-it">What is <code>git merge</code> And Why Are People Afraid of It?</a></li>
+  <li><a href="#what-is-a-git-merge-conflict" id="toc-what-is-a-git-merge-conflict" class="nav-link" data-scroll-target="#what-is-a-git-merge-conflict">What is A <code>git merge</code> Conflict?</a></li>
+  <li><a href="#git-merge-conflicts-in-the-wild" id="toc-git-merge-conflicts-in-the-wild" class="nav-link" data-scroll-target="#git-merge-conflicts-in-the-wild"><code>git merge</code> Conflicts in the Wild</a></li>
+  <li><a href="#preparing-for-better-merges" id="toc-preparing-for-better-merges" class="nav-link" data-scroll-target="#preparing-for-better-merges">Preparing For Better Merges</a></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
+<main class="content" id="quarto-document-content">
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/banner.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="Please Let Me Merge Before I Start Crying: And Other Things I've Said At The Git Terminal"></p>
+</figure>
+</div>
+<section id="about" class="level1">
+<h1>About</h1>
+<p>It’s probably a safe bet to say that most of the Posit Community have at least heard of the version control system, “<a href="https://git-scm.com/">Git</a>,” or the developer platform “<a href="https://en.wikipedia.org/wiki/GitHub">GitHub</a>.” A smaller number of people can probably say they actually use Git, but an even smaller number would possibly say they feel comfortable collaborating with Git. This may be due to unique circumstances, like being a lone data science unicorn, having antiquated data workflows, or because users can’t expand upon their Git knowledge to introduce collaborative functionality to their workflows.</p>
+<div class="img-fluid quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/git_logo.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The Git Logo"></p>
+<figcaption>“Git” seems to be the version control software of choice within the Posit Community.</figcaption>
+</figure>
+</div>
+<p>Whatever the reason, it is hard to deny how imperative version control is to collaborative data science work, and while Git is not the only version control system that exists, its use in the Posit Community is undeniably strong, possibly due in part to RStudio’s integration of the software along with the development of the <a href="https://usethis.r-lib.org/reference/index.html#git-and-github"><code>usethis</code> package</a> as well.</p>
+<p><strong><em>“Please Let Me Merge”</em></strong> is geared towards those who may feel comfortable working independently with Git but need some confidence when working collaboratively. Just like novice drivers can learn to confidently (and <strong>safely!</strong>) merge onto <small>(<em>seemingly</em>)</small> intimidating highways, those new to collaborating with Git can also conquer Git merges with some exposure and preparation.</p>
+<div class="img-fluid quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/initiald.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A gif from the anime Initial D with cars racing"></p>
+<figcaption>When drivers finally learn what the ‘acceleration lane’ of a highway is.</figcaption>
+</figure>
+</div>
+</section>
+<section id="interacting-with-git" class="level1">
+<h1>Interacting With Git</h1>
+<p>For those of us that use Git, we have a few options when it comes to interacting with Git and GitHub:</p>
+<section id="rstudio-graphical-user-interface-gui" class="level2">
+<h2 class="anchored" data-anchor-id="rstudio-graphical-user-interface-gui">RStudio Graphical User Interface (GUI)</h2>
+<p>For R users, this may be the most popular method of interacting with Git. Undoubtedly due to RStudio’s ability to shield users from the traditional terminal view. Users that interact with Git in this way only need to save their work, commit their changes, and push up to their repository that’s probably on GitHub.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/rstudio_gui.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A screenshot of RStudio's Graphical User Interface that allows users to interact with the git version control system"></p>
+</figure>
+</div>
+</section>
+<section id="command-line-terminals" class="level2">
+<h2 class="anchored" data-anchor-id="command-line-terminals">Command Line Terminals</h2>
+<p>For the hardcore Git veterans (or for those that just want a ‘fluff-free’ Git experience), the command line may be their tool of choice. RStudio users have the option of interacting with their system’s terminal within RStudio; but <a href="https://www.atlassian.com/git/tutorials/git-bash">Git Bash</a> and standard terminal shell programs like <a href="https://en.wikipedia.org/wiki/PowerShell">PowerShell</a> for Windows and <a href="https://en.wikipedia.org/wiki/Terminal_(macOS)">Terminal</a> for macOs can also be used outside of RStudio.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/git_bash.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A screenshot of the Git Bash application. An example of a Command Line Terminal."></p>
+</figure>
+</div>
+</section>
+<section id="git-gui-clients" class="level2">
+<h2 class="anchored" data-anchor-id="git-gui-clients">Git GUI Clients</h2>
+<p>For the “fluffiest” Git experience, users can use <a href="https://git-scm.com/downloads/guis">third-party Git GUI clients</a> like <a href="https://desktop.github.com/">GitHub Desktop</a> or <a href="https://www.gitkraken.com/">GitKraken</a>. Git GUI clients can be free or proprietary and usually have some added benefits like improved error messaging, accessibility to most Git commands and functionality, and in some cases added visualizations to assist with general version control and commit histories.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/gh_desktop.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%" alt="A screenshot of the Git Client program GitHub Desktop"></p>
+</figure>
+</div>
+</section>
+<section id="which-method-should-i-use" class="level2">
+<h2 class="anchored" data-anchor-id="which-method-should-i-use">Which Method Should I Use?</h2>
+<p>Whatever you feel most comfortable with. Unless the organization you are collaborating with explicitly states you must use one method over the other, any method of Git interaction will provide the same results. The only time this may not be true is if your work requires <strong><em>very advanced</em></strong> Git operations. Most work does not fall into this category. Remember, <strong>you don’t get brownie points</strong> for using a terminal, and <strong>your Data Science ‘card’ won’t be revoked</strong> if you prefer a third-party GUI client. Use whatever takes the least amount of time and pain based on your experience and skill set.</p>
+</section>
+</section>
+<section id="what-is-git-merge-and-why-are-people-afraid-of-it" class="level1">
+<h1>What is <code>git merge</code> And Why Are People Afraid of It?</h1>
+<p>At it’s core, <code>git merge</code> is simply how users can join two or more development histories, (AKA: <em>Git</em> <em>branches</em>) together. <code>git merge</code> is essential to working collaboratively in Git simply because it is the proper way incorporate Git’s functionality of version control into your work. When used correctly, this allows users to safely modify existing work or create additional work that can be safely incorporated into an online repository with which others can work and interact.</p>
+<p>If <code>git merge</code> is simply just joining branches together…it can’t be all that bad right?</p>
+<p>Nope. Wrong. Please understand that this is a <strong>overly simple</strong> explanation of what <code>git merge</code> is. One can literally spend hours reading documentation/content on the different types of Git merges. It is a rabbit hole reserved only for those brave enough to enter.</p>
+<p>It is without a doubt that most people who are afraid of Git merges are afraid because of <code>git merge</code> conflicts; The bane of every Git user’s existence.</p>
+<div class="img-fluid quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/mergeburn.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Someone tries to add something to a pot on a stove with a long stick. The pot quickly is set on fire. The room quickly fills with fire."></p>
+<figcaption>When the <s>intern</s> <em>any Git newbie</em> experiences their first Git merge conflict</figcaption>
+</figure>
+</div>
+</section>
+<section id="what-is-a-git-merge-conflict" class="level1">
+<h1>What is A <code>git merge</code> Conflict?</h1>
+<p>As intimidating as it is…the concept of a <code>git merge</code> conflict is actually quite simple:</p>
+<p><br></p>
+<blockquote class="blockquote">
+<p><em>“Merge conflicts occur when <strong>competing changes</strong> are made to the same line of a file, or when one person edits a file and another person deletes the same file.”</em></p>
+<p>- <a href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line">GitHub Docs</a> <em>(“Resolving a merge conflict using the command line”)</em></p>
+</blockquote>
+<p><br></p>
+<p>So if it’s this simple…why is it intimidating? Probably because your once beautiful-looking code can get riddled with greater-than <code>&gt;&gt;&gt;&gt;</code> and less-than <code>&lt;&lt;&lt;&lt;</code> signs seemingly without warning like this:</p>
+<div class="img-fluid quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/conflict_code.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A screenshot of a beautiful snippet of R code before and after a failed git merge"></p>
+<figcaption>When Git detects version discrepancies it rudely inserts some syntax to let the user know it needs help resolving the conflict</figcaption>
+</figure>
+</div>
+<p><br></p>
+<p>And depending on how you are choosing to interact with Git, you can also get blocks of text like this in the terminal or RStudio GUI:</p>
+<div class="img-fluid quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/terminal_conflict.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A screenshot of a git merge conflict from a rebase attempt."></p>
+<figcaption>A Wall of <s>text</s> Shame Letting us Know We Messed Up</figcaption>
+</figure>
+</div>
+<p>Maybe it’s the syntax, or the way the word <code>CONFLICT</code> is in all caps here, or maybe because Git asks us if we want to <strong>abort</strong> our merge attempts; when this wall of text graces users’ screens, it can be enough to strike fear in the hearts of many. What Git newbies fail to realize, though, is that there is nothing to be afraid of. This is simply Git’s way of nicely saying, <em>“<strong>Hey. I’m only some program, and I’m actually not smart enough to figure out which version of this thing is the version you want. Can you please choose so I can finish up for you?“</strong></em></p>
+<p>In this instance, the user is given the proverbial ‘steering wheel’ and must decide on how to continue the merge. It is my belief that this stresses people out either because of the ‘theatrics’ of it all (I mean, how would you feel if you thought a computer was yelling at you in caps?), or because they are afraid to make a decision about what needs to move forward. This all used to be true for me…until I had to start using Git to work with people…and that work had hard, demanding deadlines that required me to figure these things out…fast.</p>
+</section>
+<section id="git-merge-conflicts-in-the-wild" class="level1">
+<h1><code>git merge</code> Conflicts in the Wild</h1>
+<p>Let’s face it. Those who may feel uncomfortable collaborating with Git simply may not need to, or they can usually find some workaround <em>(like burning down their local repos faster than Jenny Bryan will <a href="https://www.tidyverse.org/blog/2017/12/workflow-vs-script/">burn your computer down</a> if you dare use <code>setwd()</code> in R)</em> to make things work for them. In my personal case, I had to get really familiar with Git REAL fast because I needed to collaborate with others and ‘collaborate with myself’ across LOTS of branches within one project.</p>
+<div class="img-fluid quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/no.gif" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Eric from boy meets world shouting the word &quot;No&quot;"></p>
+<figcaption>My reaction when I was SO SURE that Git merge was going to be conflict-free 🔥</figcaption>
+</figure>
+</div>
+<p><br></p>
+<p>Working as a data scientist with oncology clinical trial data is a challenging but rewarding position that afforded me lots of hours of pain and tears in my Git terminal that left me not only saying, “<em>Please let me merge before I cry,“</em> but also things like&nbsp;<em>“Why did you change this?”, “WHAT are you doing?”</em> and probably some creative expletives I won’t repeat here because I’m a professional.</p>
+<p><br></p>
+<p>While it would be difficult to list every time I’ve encountered a merge conflict in the wild, a few painful memories come to mind:</p>
+<ul>
+<li><p>The time I came back from parental leave for <strong>six months</strong> and started working on stuff before rebasing or pulling from <code>main</code>/<code>master</code></p></li>
+<li><p>The time one ‘urgent’ thing was asked for on one branch, but then a ‘more urgent’ thing was asked for and I switched to the ‘more urgent’ branch <strong>without committing</strong> the ‘urgent’ thing.</p></li>
+<li><p>The time my compulsive tendencies forced me to make ✨formatting and style changes✨to code someone had <strong>already pulled and started working on</strong>.</p></li>
+<li><p>The time karma got me for working on a personal project on my work computer, but then also working on the personal project on my personal computer seperately, and then <strong>having to deal with the aftermath</strong>.</p></li>
+</ul>
+</section>
+<section id="preparing-for-better-merges" class="level1">
+<h1>Preparing For Better Merges</h1>
+<p>While it is probably unrealistic to say you can completely avoid Git merge conflicts there are definitely things you can do to better set yourself up for success. Just like with learning how to drive a car, you can absolutely (and should sometimes reference) a driving manual (or some documentation on Git merges); but it can’t be argued that the best way to learn how to drive is by <em>practicing</em> driving.</p>
+<p>When you think about it, even seasoned drivers with years of experience aren’t perfect. Sometimes things happen. Accidents. Unexpected road blocks. Annoying construction detours. The difference though between beginner and seasoned drivers are experience and exposure. Every time you are exposed to a different challenge or scenario you can use the experience to better prepare yourself for the next time.</p>
+<p>So while I can’t provide a fool-proof guide on completely avoiding Git merge conflicts, I can provide a few highlights of things I’ve learned while working collaboratively with Git:</p>
+<ul>
+<li><p>Think <strong>before you start working</strong> or touching ANYTHING. Did you pull? Are you on the right branch? Don’t let external “fires” fluster you before you start.</p></li>
+<li><p><strong>Don’t leave anything uncommitted</strong> if you can help it. Uncommitted changes can and will follow you around if you let them.</p></li>
+<li><p><strong>Communicate with your collaborators</strong>. If you know someone is working on something, try to avoid working on that file if possible. Sometimes this can’t be avoided, but it can save a lot of problems if you are able to cleanly “<a href="https://en.wikipedia.org/wiki/Hot_potato"><em>hot-potato</em></a>” your work between collaborators.</p></li>
+<li><p><strong>Decide a work style</strong> that works for your situation when it comes to making commits. Committing frequently on huge tasks is great, but what happens when you need to merge and there’s conflicts with <strong>EACH. AND. EVERY. COMMIT?</strong> Will squashing your commits be appropriate or will you be ready to go through and resolve each commit if need be?</p></li>
+</ul>
+<p>While this topic may be appropriate for those who can already minimally interact with Git, I hope it would still resonate with Git users of all skill levels and might even introduce some concepts for complete beginners to keep in the back of their minds. This will be for anyone who has ever held their breath after they pushed or pulled at the terminal, those who are seasoned veterans and may chuckle as they’ve undoubtedly experienced the pain of merge conflicts, and those who may need that little extra push to tackle that merge conflict the next time they come face-to-face with it.</p>
+<div class="img-fluid quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/got_this.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A still image of a battered Sylvester Stallone giving someone a thumbs up"></p>
+<figcaption>You may feel this way after resolving your first brutal conflict, but it’s going to feel SO GOOD!</figcaption>
+</figure>
+</div>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      return note.innerHTML;
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
